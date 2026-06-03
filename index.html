@@ -2,19 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>NexusAI - Welcome</title>
     <style>
-        body { margin: 0; background: #050505; color: #fff; font-family: 'Segoe UI', sans-serif; overflow: hidden; }
-        .welcome-container { display: flex; flex-direction: column; height: 100vh; align-items: center; justify-content: center; }
-        .carousel { display: flex; width: 100%; overflow-x: hidden; scroll-behavior: smooth; }
-        .slide { flex: 0 0 100%; display: flex; flex-direction: column; align-items: center; padding: 20px; }
-        img { width: 85%; max-width: 400px; border-radius: 30px; margin-bottom: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
-        h2 { font-size: 26px; margin-bottom: 15px; color: #fff; }
-        p { color: #ccc; text-align: center; padding: 0 25px; line-height: 1.6; font-size: 16px; max-width: 500px; }
-        .controls { position: absolute; bottom: 40px; width: 90%; display: flex; justify-content: space-between; align-items: center; }
-        button { background: linear-gradient(90deg, #6e45e2, #88d3ce); color: white; border: none; padding: 15px 35px; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        button:hover { opacity: 0.9; }
+        * { box-sizing: border-box; }
+        body { margin: 0; background: #050505; color: #fff; font-family: sans-serif; overflow: hidden; }
+        
+        .carousel { 
+            display: flex; width: 100vw; height: 85vh; 
+            overflow-x: auto; scroll-snap-type: x mandatory; 
+            scroll-behavior: smooth; scrollbar-width: none;
+        }
+        
+        .slide { 
+            flex: 0 0 100vw; scroll-snap-align: center; 
+            display: flex; flex-direction: column; align-items: center; 
+            justify-content: center; padding: 20px;
+        }
+        
+        img { width: 90%; max-width: 350px; border-radius: 30px; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.6); }
+        h2 { font-size: 22px; margin: 10px 0; }
+        p { color: #aaa; text-align: center; padding: 0 30px; font-size: 14px; line-height: 1.5; }
+        
+        .controls { position: fixed; bottom: 30px; width: 100%; display: flex; justify-content: center; gap: 20px; }
+        button { background: #6e45e2; color: white; border: none; padding: 15px 40px; border-radius: 50px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -23,22 +34,22 @@
     <div class="slide">
         <img src="assets/images-1.png" alt="AI Video">
         <h2>AI Video Creation</h2>
-        <p>NexusAI utilizes cutting-edge AI technology to transform your text prompts into high-quality cinematic videos in seconds.</p>
+        <p>Transform text into high-quality cinematic videos using our advanced AI engine.</p>
     </div>
     <div class="slide">
         <img src="assets/images-2.png" alt="Image to Video">
         <h2>Dynamic Transformation</h2>
-        <p>Bring your static portraits to life with magical AI effects. Easily turn any ordinary photo into a stunning moving masterpiece.</p>
+        <p>Bring static portraits to life with magical effects and motion.</p>
     </div>
     <div class="slide">
         <img src="assets/images-3.png" alt="Templates">
         <h2>Professional Templates</h2>
-        <p>Access a vast library of artistic styles, including Cyberpunk, Samurai, and more. Select your favorite and let AI handle the rest.</p>
+        <p>Explore a library of artistic styles like Cyberpunk and Samurai.</p>
     </div>
     <div class="slide">
         <img src="assets/images-4.png" alt="Community">
         <h2>Community Gallery</h2>
-        <p>Join the global NexusAI community. Showcase your unique creations, explore trending AI art, and get inspired by others.</p>
+        <p>Showcase your work and get inspired by the global NexusAI community.</p>
     </div>
 </div>
 
@@ -50,14 +61,11 @@
 <script>
     let index = 0;
     const carousel = document.getElementById('carousel');
-    
     function nextSlide() {
         index = (index + 1) % 4;
-        carousel.scrollTo(index * carousel.offsetWidth, 0);
+        carousel.scrollTo(index * window.innerWidth, 0);
     }
-    
-    // Auto-slide every 3 seconds
-    setInterval(nextSlide, 3000);
+    setInterval(nextSlide, 3500);
 </script>
 
 </body>
