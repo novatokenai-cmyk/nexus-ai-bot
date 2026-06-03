@@ -1,28 +1,41 @@
-<!-- Welcome Screen Container -->
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusAI - Welcome</title>
+    <style>
+        /* Cikakken CSS a ciki */
+        body { margin: 0; background: #050505; color: #fff; font-family: sans-serif; overflow-x: hidden; }
+        .welcome-container { display: flex; flex-direction: column; height: 100vh; align-items: center; }
+        .carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; width: 100%; height: 75vh; scrollbar-width: none; }
+        .onboarding-slide { flex: 0 0 100%; scroll-snap-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .onboarding-slide img { width: 80%; border-radius: 25px; box-shadow: 0 10px 30px rgba(110, 69, 226, 0.3); }
+        h2 { margin: 20px 0 10px 0; font-size: 22px; }
+        p { color: #aaa; text-align: center; padding: 0 30px; font-size: 14px; }
+        .controls { padding: 20px; }
+        button { background: linear-gradient(90deg, #6e45e2, #88d3ce); color: white; border: none; padding: 15px 60px; border-radius: 50px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+
 <div class="welcome-container">
     <div class="carousel">
-        <!-- Slide 1: AI Video -->
         <div class="onboarding-slide">
-            <img src="assets/images-1.png" alt="AI Video Generator">
+            <img src="assets/images-1.png" alt="AI Video">
             <h2>AI Video Creation</h2>
             <p>Generate high-quality cinematic videos from text prompts.</p>
         </div>
-
-        <!-- Slide 2: Image to Video -->
         <div class="onboarding-slide">
             <img src="assets/images-2.png" alt="Image to Video">
             <h2>Dynamic Transformation</h2>
             <p>Bring your static portraits to life with magical AI effects.</p>
         </div>
-
-        <!-- Slide 3: Expressive Templates -->
         <div class="onboarding-slide">
-            <img src="assets/images-3.png" alt="Expressive Templates">
+            <img src="assets/images-3.png" alt="Templates">
             <h2>Professional Templates</h2>
             <p>Access unlimited artistic styles and cyberpunk templates.</p>
         </div>
-
-        <!-- Slide 4: Community -->
         <div class="onboarding-slide">
             <img src="assets/images-4.png" alt="Community">
             <h2>Community Gallery</h2>
@@ -31,7 +44,9 @@
     </div>
     
     <div class="controls">
-        <button id="next-btn">Next</button>
-        <button id="get-started">Get Started</button>
+        <button onclick="window.location.href='dashboard.html'">Get Started</button>
     </div>
 </div>
+
+</body>
+</html>
